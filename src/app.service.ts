@@ -3,17 +3,18 @@ import { readFileSync } from 'fs';
 
 @Injectable()
 export class AppService {
-  getHello(): void {
-    console.log('hello world');
-  }
+  diseaseFile: string;
 
   readDiseaseFile(): void {
-    // get cwd
     const cwd = process.cwd();
-    console.log(cwd);
-    console.log(__dirname);
     const file = readFileSync(`${cwd}/src/mock-data/disease`, 'utf8');
-    console.log(file);
+    this.diseaseFile = file;
   }
-  parseDiseaseFile(): void {}
+  parseDiseaseFile(): void {
+    let lineNumber = 1;
+    this.diseaseFile.split('\n').forEach((line) => {
+      console.log(lineNumber, line);
+      lineNumber++;
+    });
+  }
 }
