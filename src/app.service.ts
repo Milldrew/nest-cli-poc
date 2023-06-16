@@ -14,7 +14,7 @@ export class AppService {
     let lineNumber = 1;
     this.diseaseFile.split('\n').forEach((line) => {
       console.log(lineNumber, line);
-      lineNumber++;
+      lineNumber += 1;
     });
   }
 }
