@@ -5,6 +5,6 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.createApplicationContext(AppModule);
   const appController = app.select(AppModule).get(AppController);
-  appController.getHello();
+  appController.parseDiseaseFile();
 }
 bootstrap();

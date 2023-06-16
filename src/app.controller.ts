@@ -9,4 +9,9 @@ export class AppController {
   getHello(): void {
     return this.appService.getHello();
   }
+
+  parseDiseaseFile() {
+    this.appService.readDiseaseFile();
+    this.appService.parseDiseaseFile();
+  }
 }
